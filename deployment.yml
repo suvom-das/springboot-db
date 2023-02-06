@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springboot-app
+  template:
+    metadata:
+      labels:
+        app: springboot-app
+    spec:
+      containers:
+      - name: springboot-container
+        image: suvomdas/springboot-db:1.0.1
+        imagePullPolicy: Always     
+        command: ["init_file"]
+        args: [""]
+        ports:
+        - name: springboot-port
+          containerPort: 9000

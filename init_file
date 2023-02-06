@@ -1,0 +1,4 @@
+#!/bin/bash
+
+APPLICATION_HOME=/
+java -jar Emp-System-0.0.1-SNAPSHOT.jar
